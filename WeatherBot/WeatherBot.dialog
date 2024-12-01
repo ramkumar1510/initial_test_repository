@@ -1,0 +1,163 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "weatherBot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "i7aqw4",
+        "name": "Greeting (ConversationUpdate activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "name": "Loop: For each item",
+            "description": "",
+            "id": "sUPm5L"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "name": "Branch: If/else",
+                "description": "",
+                "id": "GuGjPZ"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "name": "Send a response",
+                    "description": "",
+                    "id": "8lAkHT"
+                  },
+                  "activity": "${SendActivity_8lAkHT()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnActivity",
+      "$designer": {
+        "id": "gTbWCY",
+        "name": "Activities (Activity received)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kxovJs"
+          },
+          "activity": "${SendActivity_kxovJs()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "ZzT95b",
+        "name": "weather"
+      },
+      "intent": "weather",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "mj9pOM"
+          },
+          "activityProcessed": true,
+          "dialog": "getWeather"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "jcgvYt",
+        "name": "Unknown intent"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VgMp3s"
+          },
+          "activity": "${SendActivity_VgMp3s()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "7Jy0UC",
+        "name": "help"
+      },
+      "intent": "help",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "EIzqra"
+          },
+          "activity": "${SendActivity_EIzqra()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "QzUJJg",
+        "name": "cancel"
+      },
+      "intent": "cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "fWHOfx"
+          },
+          "activity": "${SendActivity_fWHOfx()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "WDCa2D"
+          },
+          "activityProcessed": true
+        }
+      ]
+    }
+  ],
+  "generator": "WeatherBot.lg",
+  "id": "WeatherBot",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "weather",
+        "pattern": "weather"
+      },
+      {
+        "intent": "help",
+        "pattern": "help"
+      },
+      {
+        "intent": "cancel",
+        "pattern": "cancel"
+      }
+    ]
+  }
+}

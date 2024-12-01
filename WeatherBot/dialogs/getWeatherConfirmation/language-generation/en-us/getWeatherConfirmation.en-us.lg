@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_3VhFgc()
+[Activity
+    Text = ${ConfirmInput_Prompt_3VhFgc_text()}
+]
+
+# ConfirmInput_Prompt_3VhFgc_text()
+- - What is the Zipecode ?
+# ConfirmInput_UnrecognizedPrompt_3VhFgc()
+[Activity
+    Text = ${ConfirmInput_UnrecognizedPrompt_3VhFgc_text()}
+]
+
+# ConfirmInput_UnrecognizedPrompt_3VhFgc_text()
+- - Sorry I didn't get you

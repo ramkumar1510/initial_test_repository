@@ -1,0 +1,54 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "GigAfv",
+    "name": "getWeatherConfirmation",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "N5Xn5X"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "h5SnUy"
+          },
+          "activityProcessed": true
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "3VhFgc"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "${ConfirmInput_UnrecognizedPrompt_3VhFgc()}",
+          "invalidPrompt": "",
+          "prompt": "${ConfirmInput_Prompt_3VhFgc()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "user.response",
+          "validations": [
+            "="
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "getWeatherConfirmation.lg",
+  "recognizer": "getWeatherConfirmation.lu.qna",
+  "id": "getWeatherConfirmation"
+}

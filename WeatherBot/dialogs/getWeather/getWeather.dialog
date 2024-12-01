@@ -1,0 +1,59 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ItNG6c",
+    "name": "getWeather",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CJzyBy"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "u4quNT"
+          },
+          "activity": "${SendActivity_u4quNT()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "ZxhH7Z"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${TextInput_Prompt_ZxhH7Z()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_ZxhH7Z()}",
+          "property": "user.zipcode",
+          "validations": [
+            "=int(this.value) != null",
+            "=length(this.vaule) == 6"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "RfUwBi"
+          },
+          "activity": "${SendActivity_RfUwBi()}"
+        }
+      ]
+    }
+  ],
+  "generator": "getWeather.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "getWeather"
+}

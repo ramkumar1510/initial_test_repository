@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_u4quNT()
+[Activity
+    Text = ${SendActivity_u4quNT_text()}
+]
+
+# SendActivity_u4quNT_text()
+- - Let's get the weather
+# SendActivity_RfUwBi()
+[Activity
+    Text = ${SendActivity_RfUwBi_text()}
+]
+
+# SendActivity_RfUwBi_text()
+- - ok, Confirm if this is your zipcode ${user.zipcode}
+# TextInput_Prompt_ZxhH7Z()
+[Activity
+    Text = ${TextInput_Prompt_ZxhH7Z_text()}
+]
+
+# TextInput_Prompt_ZxhH7Z_text()
+- - What is the Zipcode
+# TextInput_UnrecognizedPrompt_ZxhH7Z()
+[Activity
+    Text = ${TextInput_UnrecognizedPrompt_ZxhH7Z_text()}
+]
+
+# TextInput_UnrecognizedPrompt_ZxhH7Z_text()
+- - Sorry I didn't get you

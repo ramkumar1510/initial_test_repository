@@ -1,0 +1,39 @@
+[import](common.lg)
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry I didn't get your inout. Please re-try again
+# SendActivity_kxovJs()
+[Activity
+    Text = ${SendActivity_kxovJs_text()}
+]
+
+# SendActivity_kxovJs_text()
+- Hi, This is Activity Response
+# SendActivity_8lAkHT()
+[Activity
+    Text = ${SendActivity_8lAkHT_text()}
+]
+
+# SendActivity_8lAkHT_text()
+- Hi , This is Weather Bot. I can talk about weather
+# SendActivity_VgMp3s()
+[Activity
+    Text = ${SendActivity_VgMp3s_text()}
+]
+
+# SendActivity_VgMp3s_text()
+- - Sorry, I didn't understand that
+# SendActivity_EIzqra()
+[Activity
+    Text = ${SendActivity_EIzqra_text()}
+]
+
+# SendActivity_EIzqra_text()
+- - I can only talk about weather. Say "WEATHER" to get started
+# SendActivity_fWHOfx()
+[Activity
+    Text = ${SendActivity_fWHOfx_text()}
+]
+
+# SendActivity_fWHOfx_text()
+- - cancelling
